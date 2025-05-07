@@ -1,0 +1,84 @@
+﻿
+/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+    message Fault_sts_Rsp Fault_sts_Rsp_msg; 
+    //message IVS_01_10ms IVS_01_10ms_msg;
+}
+
+void MainTest ()
+{
+  long IVS_tc_verdict_1;
+  long IVS_tc_verdict_2;
+  
+  
+  
+  testcase_1();
+  IVS_tc_verdict_1 = testGetVerdictLastTestCase(); // testcase1의 verdict 결과를 저장 0: pass, 1: fail
+  if(IVS_tc_verdict_1 == 0 )
+  {
+    testSetVerdictModule(0);
+  }
+  else
+  {
+    testSetVerdictModule(1);
+  }
+  
+  //testcase_2();
+  //IVS_tc_verdict_2 = testGetVerdictLastTestCase(); // testcase2의 verdict 결과를 저장 0: pass, 1: fail
+  
+  //if (IVS_tc_verdict_1 == 0 || IVS_tc_verdict_2 == 0) // 0 은 pass, 1은 fail
+  //{
+  //  testSetVerdictModule(0); //둘 중 하나라도 pass 이면 pass
+  //}
+  //else
+  //{
+  //  testSetVerdictModule(1); //둘 다 실패이면 fail
+  //}
+}
+
+testcase testcase_1()
+{
+
+  int i;
+  
+  testCaseTitle("TC 1.0.1", "IVS BlackBox Test Case 1.0.1");
+  
+  testCaseDescription("Test case is used to check the ability of the SUT to switch");
+  testCaseDescription("into the build-in diagnostic and test mode. The test case does");
+  testCaseDescription("not change test settings within the device. ");
+  
+  TestStep("1.0", "Communication prepared");
+  
+  
+      @sysvar::IVS::All_Fault_sts_request = 1;
+      @sysvar::IVS::Ignition_sts = 1;
+      @sysvar::IVS::Engine_sts = 1;
+  
+      @sysvar::IVS::Batt_Voltage = 22000;
+      testWaitForSignalChange(BATT_Vol_Err_sts, 100);
+  
+      for(i = 1500; i >= 0; i--)
+      {
+        @sysvar::IVS::Batt_Voltage = i*10;
+        testWaitForSignalChange(BATT_Vol_Err_sts, 150);
+        if(Fault_sts_Rsp_msg.BATT_Vol_Err_sts == 1)
+        {
+          TestStepPass("2.0", " Recovery discover! ");
+        }
+        else if(Fault_sts_Rsp_msg.BATT_Vol_Err_sts == 2)
+        {
+          TestStepFail("2.0",  "Fail");
+        }   
+      }
+}    
+
+on message Fault_sts_Rsp
+{
+  Fault_sts_Rsp_msg.BATT_Vol_Err_sts = this.BATT_Vol_Err_sts;
+}

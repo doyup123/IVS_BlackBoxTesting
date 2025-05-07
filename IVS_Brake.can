@@ -1,0 +1,39 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message BRK_01_10ms BRK_01_10ms_msg;
+  msTimer IVS_01_10ms_timer;
+}
+
+on timer IVS_01_10ms_timer
+{
+  output(BRK_01_10ms_msg);
+}
+
+on start
+{
+  @sysvar::IVS::Vehicle_Speed = 0;
+  @sysvar::IVS::ACCEL_press = 0;
+  @sysvar::IVS::Brake_press = 0;
+  setTimerCyclic(IVS_01_10ms_timer, 10, 10);
+}
+
+on sysvar IVS::Vehicle_Speed
+{
+  BRK_01_10ms_msg.Vehicle_Speed = @this;
+}
+
+on sysvar IVS::ACCEL_press
+{
+  BRK_01_10ms_msg.ACCEL_press = @this;
+}
+
+on sysvar IVS::Brake_press
+{
+  BRK_01_10ms_msg.Brake_press = @this;
+}

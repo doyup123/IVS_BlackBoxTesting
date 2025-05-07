@@ -1,0 +1,52 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message Fault_sts_Req Fault_sts_Req_msg;
+  message IVS_Version_Req IVS_Version_Req_msg;
+  msTimer IVS_01_10ms_timer;
+}
+
+
+on sysvar IVS::All_Fault_sts_request
+{
+  Fault_sts_Req_msg.All_Fault_sts_request = @this;
+  
+  if(@this == 1)
+  {
+  setTimerCyclic(IVS_01_10ms_timer, 0, 10);
+  }
+  else
+  {
+    cancelTimer(IVS_01_10ms_timer);
+  }
+}
+
+on sysvar IVS::All_Fault_clr_request
+{
+  Fault_sts_Req_msg.All_Fault_clr_request = @this;
+  output(Fault_sts_Req_msg);
+}
+
+on sysvar IVS::Software_Version_Request
+{
+  IVS_Version_Req_msg.Software_Version_Request = @this;
+  output(IVS_Version_Req_msg);
+}
+
+on timer IVS_01_10ms_timer
+{
+  output(Fault_sts_Req_msg);
+}
+
+on start
+{
+  @sysvar::IVS::All_Fault_clr_request = 0;
+  @sysvar::IVS::All_Fault_sts_request = 0;
+}
+
+

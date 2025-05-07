@@ -1,0 +1,71 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message IGN_01_2ms IGN_01_2ms_msg;
+  message ENG_02_10ms ENG_02_10ms_msg;
+  msTimer IVS_01_10ms_timer;
+  msTimer IVS_01_2ms_timer;
+  msTimer IVS_01_10ms_timer_50cycle;
+
+}
+
+on timer IVS_01_10ms_timer
+{
+  output(ENG_02_10ms_msg);
+}
+
+on timer IVS_01_2ms_timer
+{
+  output(IGN_01_2ms_msg);
+}
+
+on timer IVS_01_10ms_timer_50cycle
+{
+  @sysvar::IVS::Cycle_Count = @sysvar::IVS::Cycle_Count + 1;
+  @sysvar::IVS::Ignition_sts ^= 1;
+
+}
+
+on sysvar IVS::Engine_sts
+{
+  ENG_02_10ms_msg.Engine_sts = @this;
+}
+
+on sysvar IVS::Ignition_sts
+{
+  IGN_01_2ms_msg.Ignition_sts = @this;
+  if(@sysvar::IVS::Cycle_Count == 96)
+  {
+    cancelTimer(IVS_01_10ms_timer_50cycle);
+    @sysvar::IVS::Cycle_Count = 0;
+  }
+}
+
+on sysvar IVS::IGN_Cycle_50
+{
+  if(@this == 1)
+  {
+   setTimerCyclic(IVS_01_10ms_timer_50cycle, 20, 20);
+  }
+  else if(@this == 0)
+  {
+    
+  }
+}
+
+on start
+{
+  setTimerCyclic(IVS_01_2ms_timer, 2, 2);
+  setTimerCyclic(IVS_01_10ms_timer, 10, 10);
+  @sysvar::IVS::Cycle_Count = 0;
+  @sysvar::IVS::Ignition_sts = 0;
+  @sysvar::IVS::Engine_sts = 0;
+  @sysvar::IVS::IGN_Cycle_50 = 0;
+}
+
+

@@ -1,0 +1,27 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message STR_01_10ms STR_01_10ms_msg;
+  msTimer IVS_01_10ms_timer;
+}
+
+on timer IVS_01_10ms_timer
+{
+  output(STR_01_10ms_msg);
+}
+
+on sysvar IVS::Steering_angle
+{
+  STR_01_10ms_msg.Steering_angle = @this;
+}
+
+on start
+{
+  @sysvar::IVS::Steering_angle = 0;
+  setTimerCyclic(IVS_01_10ms_timer, 10, 10);
+}

@@ -1,0 +1,39 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message BATT_01_10ms BATT_01_10ms_msg;
+  msTimer IVS_01_10ms_timer;
+}
+
+on timer IVS_01_10ms_timer
+{
+  output(BATT_01_10ms_msg);
+}
+
+on start
+{
+  setTimerCyclic(IVS_01_10ms_timer, 10, 10);
+  @sysvar::IVS::Batt_Percent = 0;
+  @sysvar::IVS::Batt_Chg_Sts = 0;
+  @sysvar::IVS::Batt_Voltage = 0;
+}
+
+on sysvar IVS::Batt_Percent
+{
+  BATT_01_10ms_msg.Batt_Percent = @this;
+}
+
+on sysvar IVS::Batt_Chg_Sts
+{
+  BATT_01_10ms_msg.Batt_Chg_Sts = @this;
+}
+
+on sysvar IVS::Batt_Voltage
+{
+  BATT_01_10ms_msg.Batt_Voltage = @this;
+}
