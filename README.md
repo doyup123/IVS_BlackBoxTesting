@@ -20,7 +20,7 @@
 
 ------------------------
 
-### 1. 요구사양서/요구사항서 분석
+### 1. 요구사양서/요구사항서 분석 🔎
 #### 1.1 CAN 통신사양서 분석 및 CAN DB 작성
 | 구분 | 이미지 |
 |------|--------|
@@ -35,19 +35,23 @@
 |요구사항 분석| <img width="816" height="319" alt="요구사항 분석" src="https://github.com/user-attachments/assets/705106ab-cb1b-4060-be55-3791a919523a" /> |
 |테스트케이스 작성| <img width="1171" height="175" alt="image" src="https://github.com/user-attachments/assets/e150ffe9-3e50-4e72-9098-e6b23f090c4f" /> |
 
+### 2. 검증환경 구축 🔨
+| 구분 | 이미지 | 
+|------|--------|
+|시뮬레이션 환경 셋업| <img width="937" height="537" alt="시뮬레이션 셋업" src="https://github.com/user-attachments/assets/3ee6954e-a2b1-45e2-a95c-abe368786407" /> |
+|수동 검증을 위한 UI|<img width="1197" height="657" alt="UI" src="https://github.com/user-attachments/assets/c1c34c36-7a14-49e5-8ac3-cfe765a01190" /> |
+|자동화 스크립트 작성| <img width="722" height="582" alt="image" src="https://github.com/user-attachments/assets/e245301a-6f9d-4192-978a-061d8360c61d" /> |
 
+### 3. 검증  수행
 
-#### 경계값 분석을 통한 TestCase 작성
-| TC ID | 목적           | 사전조건               | 입력 시나리오                           | 기대 결과                        | 실제 관찰 결과                | 판정       |
-| ----- | ------------ | ------------------ | --------------------------------- | ---------------------------- | ----------------------- | -------- |
-| TC-01   | 검출 경계 하한-ε   | Engine=Run, IGN=On | Batt% **14.9**를 **5s** 유지         | **4.9~5.1s** 내 Fault Level=2 | Fault=2 미발생             | **Fail** |
-| TC-02   | 검출 경계값(=15%) | Engine=Run, IGN=On | Batt% **15.0**을 **5s** 유지         | **4.9~5.1s** 내 Fault Level=2 | Level=0 유지(미검출)         | **Fail** |
-| TC-03   | 검출 경계 상한+ε   | Engine=Run, IGN=On | Batt% **15.1**을 **6s** 유지         | Fault 미발생                    | 미발생                     | **Pass** |
-| TC-04   | 검출 타이밍–조기    | Engine=Run, IGN=On | **14.0%** 진입 후 **4.8s**만 유지       | **4.9s 이전** Fault 금지         | 미발생                     | **Pass** |
-| TC-07   | 회복 경계 하한-ε   | Fault=2 상태 유지      | Batt% **29.9**로 상승, **200ms** 관찰  | 회복 불가(2 유지)                  | **Voltage 0.01V**에서만 회복 | **Fail** |
-| TC-08   | 회복 경계값(=30%) | Fault=2 상태 유지      | Batt% **30.0**으로 상승, **200ms** 관찰 | **90~110ms** 내 2→1           | Voltage 조건에서만 회복        | **Fail** |
-| TC-09   | 회복 경계 상한+ε   | Fault=2 상태 유지      | Batt% **30.1**로 상승, **200ms** 관찰  | **90~110ms** 내 2→1           | Voltage 조건에서만 회복        | **Fail** |
+#### 3.1 자동화 스크립트 결과 보고
+<img width="1436" height="383" alt="자동화 스크립트 결과 보고" src="https://github.com/user-attachments/assets/a8b73400-55f1-4faf-a76e-56cc94727901" />
 
+#### 3.2 CAN Message 분석을 통한 결함 확인
+<img width="766" height="537" alt="캔 메세지" src="https://github.com/user-attachments/assets/6bc0eda6-e10d-4e5e-acf3-9e6c9375cd93" />
+
+### 4. 검증 결과 분석 및 보고
+<img width="1264" height="521" alt="경계값 분석 결과보고" src="https://github.com/user-attachments/assets/7405fe7c-4616-4664-b7af-ddf5713ff594" />
 
 
 
