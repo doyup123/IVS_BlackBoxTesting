@@ -20,16 +20,22 @@
 
 ------------------------
 
-### 1. 요구사양서 분석
+### 1. 요구사양서/요구사항서 분석
 #### 1.1 CAN 통신사양서 분석 및 CAN DB 작성
 | 구분 | 이미지 |
 |------|--------|
 | CAN 통신사양서 | ![CAN 통신사양서](https://github.com/user-attachments/assets/4aa13ded-cf38-4a3a-9ec8-c80574a586dc) |
 | CAN DB 작성 | ![CANDB](https://github.com/user-attachments/assets/31dc7fbe-904b-47d3-ac74-74f4dc499e1c) |
 | 분석 단계에서 결함 발견|<img width="1107" height="663" alt="요구사항 분석시 결함 발견" src="https://github.com/user-attachments/assets/9cabbbb0-e476-49dc-955d-a18126635236" /> |
+|결함 조기 보고|<img width="1080" height="456" alt="검증 보고서 (요구사항 분석)" src="https://github.com/user-attachments/assets/96d62afd-2c8d-4db6-bbeb-e5482ba6b2d6" />|
 
 #### 1.2 요구사항서 분석 및 TestCase 작성
-<img width="816" height="319" alt="요구사항 분석" src="https://github.com/user-attachments/assets/705106ab-cb1b-4060-be55-3791a919523a" />
+| 구분 | 이미지 |
+|------|--------|
+|요구사항 분석| <img width="816" height="319" alt="요구사항 분석" src="https://github.com/user-attachments/assets/705106ab-cb1b-4060-be55-3791a919523a" /> |
+|테스트케이스 작성| <img width="1171" height="175" alt="image" src="https://github.com/user-attachments/assets/e150ffe9-3e50-4e72-9098-e6b23f090c4f" /> |
+
+
 
 #### 경계값 분석을 통한 TestCase 작성
 | TC ID | 목적           | 사전조건               | 입력 시나리오                           | 기대 결과                        | 실제 관찰 결과                | 판정       |
