@@ -15,12 +15,17 @@
 ## 검증 단계
 <img width="673" height="187" alt="검증 단계" src="https://github.com/user-attachments/assets/8f234d71-313f-4a29-9963-f273f7eee47e" />
 
+------------------------
+
 ### 1. 요구사양서 분석
 #### 1.1 CAN 통신사양서 분석 및 CAN DB 작성
 | 구분 | 이미지 |
 |------|--------|
 | CAN 통신사양서 | ![CAN 통신사양서](https://github.com/user-attachments/assets/4aa13ded-cf38-4a3a-9ec8-c80574a586dc) |
 | CAN DB 작성 | ![CANDB](https://github.com/user-attachments/assets/31dc7fbe-904b-47d3-ac74-74f4dc499e1c) |
+| 분석 단계에서 결함 발견|<img width="1107" height="663" alt="요구사항 분석시 결함 발견" src="https://github.com/user-attachments/assets/9cabbbb0-e476-49dc-955d-a18126635236" /> |
+
+
 
 
 
