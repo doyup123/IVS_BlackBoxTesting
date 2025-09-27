@@ -35,12 +35,17 @@
 |요구사항 분석| <img width="816" height="319" alt="요구사항 분석" src="https://github.com/user-attachments/assets/705106ab-cb1b-4060-be55-3791a919523a" /> |
 |테스트케이스 작성| <img width="1171" height="175" alt="image" src="https://github.com/user-attachments/assets/e150ffe9-3e50-4e72-9098-e6b23f090c4f" /> |
 
+
+
 ### 2. 검증환경 구축 🔨
 | 구분 | 이미지 | 
 |------|--------|
 |시뮬레이션 환경 셋업| <img width="937" height="537" alt="시뮬레이션 셋업" src="https://github.com/user-attachments/assets/3ee6954e-a2b1-45e2-a95c-abe368786407" /> |
 |수동 검증을 위한 UI|<img width="1197" height="657" alt="UI" src="https://github.com/user-attachments/assets/c1c34c36-7a14-49e5-8ac3-cfe765a01190" /> |
 |자동화 스크립트 작성| <img width="722" height="582" alt="image" src="https://github.com/user-attachments/assets/e245301a-6f9d-4192-978a-061d8360c61d" /> |
+
+
+
 
 ### 3. 검증  수행
 
@@ -49,6 +54,10 @@
 
 #### 3.2 CAN Message 분석을 통한 결함 확인
 <img width="766" height="537" alt="캔 메세지" src="https://github.com/user-attachments/assets/6bc0eda6-e10d-4e5e-acf3-9e6c9375cd93" />
+
+
+
+
 
 ### 4. 검증 결과 분석 및 보고
 <img width="1264" height="521" alt="경계값 분석 결과보고" src="https://github.com/user-attachments/assets/7405fe7c-4616-4664-b7af-ddf5713ff594" />
