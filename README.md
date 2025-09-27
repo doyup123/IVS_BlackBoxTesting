@@ -17,9 +17,10 @@
 
 ### 1. 요구사양서 분석
 #### 1.1 CAN 통신사양서 분석 및 CAN DB 작성
-|CAN 통신사양서|<img width="1061" height="375" alt="CAN 통신사양양" src="https://github.com/user-attachments/assets/4aa13ded-cf38-4a3a-9ec8-c80574a586dc" />|
-|CAN DB 작성|<img width="1173" height="528" alt="CANDB" src="https://github.com/user-attachments/assets/31dc7fbe-904b-47d3-ac74-74f4dc499e1c" />|
-
+| 구분 | 이미지 |
+|------|--------|
+| CAN 통신사양서 | ![CAN 통신사양서](https://github.com/user-attachments/assets/4aa13ded-cf38-4a3a-9ec8-c80574a586dc) |
+| CAN DB 작성 | ![CANDB](https://github.com/user-attachments/assets/31dc7fbe-904b-47d3-ac74-74f4dc499e1c) |
 
 
 
