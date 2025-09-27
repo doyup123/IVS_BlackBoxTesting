@@ -41,7 +41,7 @@
 | 구분 | 이미지 | 
 |------|--------|
 |시뮬레이션 환경 셋업| <img width="937" height="537" alt="시뮬레이션 셋업" src="https://github.com/user-attachments/assets/3ee6954e-a2b1-45e2-a95c-abe368786407" /> |
-|수동 검증을 위한 UI|<img width="1197" height="657" alt="UI" src="https://github.com/user-attachments/assets/c1c34c36-7a14-49e5-8ac3-cfe765a01190" /> |
+|수동 검증 UI|<img width="1197" height="657" alt="UI" src="https://github.com/user-attachments/assets/c1c34c36-7a14-49e5-8ac3-cfe765a01190" /> |
 |자동화 스크립트 작성| <img width="722" height="582" alt="image" src="https://github.com/user-attachments/assets/e245301a-6f9d-4192-978a-061d8360c61d" /> |
 
 
