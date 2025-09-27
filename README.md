@@ -15,6 +15,9 @@
 ## 검증 단계
 <img width="673" height="187" alt="검증 단계" src="https://github.com/user-attachments/assets/8f234d71-313f-4a29-9963-f273f7eee47e" />
 
+## 고장 진단 제어기 요구사항
+<img width="600" height="364" alt="image" src="https://github.com/user-attachments/assets/3271ac23-075c-4128-b721-de8dd199b1cc" />
+
 ------------------------
 
 ### 1. 요구사양서 분석
@@ -25,12 +28,10 @@
 | CAN DB 작성 | ![CANDB](https://github.com/user-attachments/assets/31dc7fbe-904b-47d3-ac74-74f4dc499e1c) |
 | 분석 단계에서 결함 발견|<img width="1107" height="663" alt="요구사항 분석시 결함 발견" src="https://github.com/user-attachments/assets/9cabbbb0-e476-49dc-955d-a18126635236" /> |
 
+#### 1.2 요구사항서 분석 및 TestCase 작성
+<img width="816" height="319" alt="요구사항 분석" src="https://github.com/user-attachments/assets/705106ab-cb1b-4060-be55-3791a919523a" />
 
-
-
-
-
-
+#####경계값 분석을 통한 TestCase 작성
 | TC ID | 목적           | 사전조건               | 입력 시나리오                           | 기대 결과                        | 실제 관찰 결과                | 판정       |
 | ----- | ------------ | ------------------ | --------------------------------- | ---------------------------- | ----------------------- | -------- |
 | TC-01   | 검출 경계 하한-ε   | Engine=Run, IGN=On | Batt% **14.9**를 **5s** 유지         | **4.9~5.1s** 내 Fault Level=2 | Fault=2 미발생             | **Fail** |
@@ -40,3 +41,11 @@
 | TC-07   | 회복 경계 하한-ε   | Fault=2 상태 유지      | Batt% **29.9**로 상승, **200ms** 관찰  | 회복 불가(2 유지)                  | **Voltage 0.01V**에서만 회복 | **Fail** |
 | TC-08   | 회복 경계값(=30%) | Fault=2 상태 유지      | Batt% **30.0**으로 상승, **200ms** 관찰 | **90~110ms** 내 2→1           | Voltage 조건에서만 회복        | **Fail** |
 | TC-09   | 회복 경계 상한+ε   | Fault=2 상태 유지      | Batt% **30.1**로 상승, **200ms** 관찰  | **90~110ms** 내 2→1           | Voltage 조건에서만 회복        | **Fail** |
+
+
+
+
+
+
+
+
