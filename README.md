@@ -4,15 +4,26 @@
 |---|------------|------|
 |김도엽|2025.04~2025.05|개인 프로젝트|
 
-## 1. 프로젝트 개요
+## 프로젝트 개요
 요구사양서를 분석하고 Vector CANoe를 활용해 테스트 환경을 구축해 고장 진단 제어기의 결함을 검증하는 프로젝트 
 
------------------------------------------
 
-## 2. 검증 Concept
+
+## 검증 Concept
 <img width="1051" height="331" alt="검증컨셉" src="https://github.com/user-attachments/assets/57a25080-601e-4f84-8f49-2c3493699bb3" />
 
----------------------------------------
+## 검증 단계
+<img width="673" height="187" alt="검증 단계" src="https://github.com/user-attachments/assets/8f234d71-313f-4a29-9963-f273f7eee47e" />
+
+### 1. 요구사양서 분석
+#### 1.1 CAN 통신사양서 분석 및 CAN DB 작성
+|CAN 통신사양서|<img width="1061" height="375" alt="CAN 통신사양양" src="https://github.com/user-attachments/assets/4aa13ded-cf38-4a3a-9ec8-c80574a586dc" />|
+|CAN DB 작성|<img width="1173" height="528" alt="CANDB" src="https://github.com/user-attachments/assets/31dc7fbe-904b-47d3-ac74-74f4dc499e1c" />|
+
+
+
+
+
 
 | TC ID | 목적           | 사전조건               | 입력 시나리오                           | 기대 결과                        | 실제 관찰 결과                | 판정       |
 | ----- | ------------ | ------------------ | --------------------------------- | ---------------------------- | ----------------------- | -------- |
