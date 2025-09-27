@@ -5,7 +5,10 @@
 |김도엽|2025.04~2025.05|개인 프로젝트|
 
 # 1. 프로젝트 개요
+요구사양서를 분석하고 Vector CANoe를 활용해 테스트 환경을 구축해 고장 진단 제어기의 결함을 검증하는 프로젝트 
 
+# 2. 검증 Concept
+<img width="1051" height="331" alt="검증컨셉" src="https://github.com/user-attachments/assets/57a25080-601e-4f84-8f49-2c3493699bb3" />
 
 
 
